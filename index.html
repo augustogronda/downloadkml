@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descarga de archivos KML</title>
+</head>
+<body>
+    <h1>Introduce el número de padrón</h1>
+    <input type="text" id="padronNumber" placeholder="Número de padrón">
+    <button onclick="downloadKML()">Descargar KML</button>
+
+    <script>
+        function downloadKML() {
+            var padronNumber = document.getElementById('padronNumber').value;
+            if(padronNumber) {
+                var url = "https://aplicaciones.catastrotucuman.gov.ar/kml.asp?txtpadron=" + padronNumber;
+                window.location.href = url;
+            } else {
+                alert("Por favor, introduce un número de padrón válido.");
+            }
+        }
+    </script>
+</body>
+</html>
